@@ -1,7 +1,7 @@
 {
     "name": "chemistry-prototype",
     "main": [
-        "chemistry-prototype.js"
+        "chemistry-prototype.js",
         "images/*"
     ],
     "version": "1.0.0",
