@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @ngdoc overview
  * @name chemistryApp.chemistryPrototype
@@ -48,14 +50,14 @@ angular.module('chemistryApp.chemistryPrototype', [
             restrict: 'E',
             transclude: true,
             controller: function($scope) {
-                this.setSidebarAvatar = function(sidebarAvatar) {
+                this.setSidebarAvatar = function (sidebarAvatar) {
                     $scope.sidebarAvatar = sidebarAvatar;
                 };
-                this.setSidebarLinks = function(sidebarLinks) {
+                this.setSidebarLinks = function (sidebarLinks) {
                     $scope.sidebarLinks = sidebarLinks;
                 };
             },
-            link: function(scope, element, attributes, controllers) {
+            link: function (scope, element, attributes, controllers) {
                 var windowController = controllers[0];
                 windowController.setSidebar();
             }
@@ -77,10 +79,10 @@ angular.module('chemistryApp.chemistryPrototype', [
             restrict: 'E',
             transclude: true,
             replace: true,
-            controller: function($scope) {
+            controller: function ($scope) {
 
             },
-            link: function(scope, element, attributes, controllers) {
+            link: function (scope, element, attributes, controllers) {
                 var windowController = controllers[0];
                 windowController.setActionPanel();
             }
@@ -101,16 +103,16 @@ angular.module('chemistryApp.chemistryPrototype', [
             restrict: 'E',
             template: '<div class="link-list" ng-transclude></div>',
             transclude: true,
-            controller: function($scope) {
+            controller: function ($scope) {
                 var links = [];
-                this.addLink = function(link) {
+                this.addLink = function (link) {
                     links.push(link);
                 };
-                this.getSidebarLinks = function() {
+                this.getSidebarLinks = function () {
                     return links;
                 };
             },
-            link: function(scope, element, attributes, controllers) {
+            link: function (scope, element, attributes, controllers) {
                 var sidebarController = controllers[0];
                 sidebarController.setSidebarLinks();
             }
@@ -134,10 +136,10 @@ angular.module('chemistryApp.chemistryPrototype', [
             restrict: 'E',
             template: '<a href="#/{{ state }}" title="{{ text }}" class="link {{ state && $root.$state.current.name === state ? \'active\' : \'\'}}">{{ text }}</a>',
             replace: true,
-            controller: function($scope) {
+            controller: function ($scope) {
 
             },
-            link: function(scope, element, attributes, controllers) {
+            link: function (scope, element, attributes, controllers) {
 
             }
         };
@@ -213,7 +215,7 @@ angular.module('chemistryApp.chemistryPrototype', [
                 scopeVariable: '='
             },
             link: function(scope, element, attrs) {
-                element.bind('click', function() {
+                element.bind('click', function () {
                     var content = attrs.textToAppend;
                     if (scope.scopeVariable) {
                         scope.scopeVariable = scope.scopeVariable + content + ' ';
@@ -252,8 +254,8 @@ angular.module('chemistryApp.chemistryPrototype', [
                             '</div>' +
                         '</div>',
             replace: true,
-            link: function(scope, element, attrs) {
-                scope.toggleButton = function() {
+            link: function (scope, element, attrs) {
+                scope.toggleButton = function () {
                     scope.scopeVariable = !scope.scopeVariable;
                     if (scope.isButton && !scope.isActive) {
                         scope.isActive = true;
@@ -282,41 +284,41 @@ angular.module('chemistryApp.chemistryPrototype', [
             scope: {
                 activeTab: '='
             },
-            controller: function($scope) {
+            controller: function ($scope) {
                 var tabs = [];
-                this.addTab = function(tab) {
+                this.addTab = function (tab) {
                     tabs.push(tab);
                 };
-                this.getTabs = function() {
+                this.getTabs = function () {
                     $scope.tabs = tabs;
                     $scope.buildTabs();
                 };
             },
-            link: function(scope, element, attrs, tabsController) {
+            link: function (scope, element, attrs, tabsController) {
                 scope.chartHeight = '200';
                 scope.chartWidth = '300';
 
-                $timeout(function() {
+                $timeout(function () {
                     tabsController.getTabs();
                 }, 1000);
 
-                scope.buildTabs = function() {
+                scope.buildTabs = function () {
                     scope.activeTab = scope.tabs[0].id;
                     scope.tabBroadcast(scope.activeTab);
 
                     var tabs = '';
-                    angular.forEach(scope.tabs, function(value, key) {
+                    angular.forEach(scope.tabs, function (value, key) {
                         tabs += '<div class="tab" ng-click="showTab(\'' + value.id + '\')" ng-class="activeTab == \'' + value.id + '\' ? \'active\' : \'\'">' + value.chartLabel + '</div>';
                     });
                     element.prepend($compile('<div class="tabs">' + tabs + '</div>')(scope));
                 };
 
-                scope.showTab = function(tab) {
+                scope.showTab = function (tab) {
                     scope.activeTab = String(tab);
                     scope.tabBroadcast(tab);
                 };
 
-                scope.tabBroadcast = function(tab) {
+                scope.tabBroadcast = function (tab) {
                     scope.$broadcast('activeTab', {
                         data: tab
                     });
@@ -348,7 +350,7 @@ angular.module('chemistryApp.chemistryPrototype', [
                 source: '@',
                 imageNumber: '@'
             },
-            link: function(scope, element, attributes, tabsController) {
+            link: function (scope, element, attributes, tabsController) {
                 var template;
 
                 if (scope.source === 'image') {
@@ -365,7 +367,7 @@ angular.module('chemistryApp.chemistryPrototype', [
                     chartLabel: attributes.label
                 });
 
-                scope.$on('activeTab', function(e, tab) {
+                scope.$on('activeTab', function (e, tab) {
                     scope.activeTab = tab.data;
                 });
             }
