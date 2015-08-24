@@ -9,6 +9,7 @@
     "authors": [
         "Doug Niccum <dniccum@ingenology.com>"
     ],
+    "private": false,
     "description": "A collection of AngularJS directives to be able to quickly scaffold prototypes for the iPad application and web applications.",
     "keywords": [
         "application",
