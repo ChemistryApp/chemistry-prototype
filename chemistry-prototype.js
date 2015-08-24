@@ -160,7 +160,7 @@ angular.module('chemistryApp.chemistryPrototype', [
                 position: '@',
                 image: '@'
             },
-            template: '<div class="inner-wrapper"><div class="avatar"><img src="{{ photo ? photo : \'/images/luke-bettis.jpg\' }}" /></div><div class="name">{{ name ? name : \'Luke Bettis\' }}<br />{{ position ? position : \'SO Admin\' }}</div></div>',
+            template: '<div class="inner-wrapper"><div class="avatar"><img src="{{ image ? image : \'/images/luke-bettis.jpg\' }}" /></div><div class="name">{{ name ? name : \'Luke Bettis\' }}<br />{{ position ? position : \'SO Admin\' }}</div></div>',
             restrict: 'E',
             transclude: true,
             controller: function($scope) {
