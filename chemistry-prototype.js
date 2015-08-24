@@ -46,7 +46,7 @@ angular.module('chemistryApp.chemistryPrototype', [
         return {
             require: ['^appWindow', 'sidebar'],
             scope: {},
-            templateUrl: '<header><div class="image"></div></header><div class="sidebar-content" ng-transclude></div>',
+            template: '<header><div class="image"></div></header><div class="sidebar-content" ng-transclude></div>',
             restrict: 'E',
             transclude: true,
             controller: function($scope) {
