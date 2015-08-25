@@ -1,34 +1,35 @@
 {
-    "name": "chemistry-prototype",
-    "main": [
-        "chemistry-prototype.js",
-        "images/*"
-    ],
-    "version": "1.0.0",
-    "homepage": "https://github.com/ChemistryApp/chemistry-prototype",
-    "authors": [
-        "Doug Niccum <dniccum@ingenology.com>"
-    ],
-    "private": false,
-    "description": "A collection of AngularJS directives to be able to quickly scaffold prototypes for the iPad application and web applications.",
-    "keywords": [
-        "application",
-        "prototype",
-        "chemistry",
-        "platform"
-    ],
-    "license": "MIT",
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "bower_components",
-        "test",
-        "tests"
-    ],
-    "dependencies": {
-        "angular": "^1.4.3",
-        "ui-router": "~0.2.15",
-        "chemistry-framework": "*",
-        "ionicons": "2.0.1"
-    }
+  "name": "chemistry-prototype",
+  "main": [
+    "chemistry-prototype.js",
+    "images/*"
+  ],
+  "version": "1.0.0",
+  "homepage": "https://github.com/ChemistryApp/chemistry-prototype",
+  "authors": [
+    "Doug Niccum <dniccum@ingenology.com>"
+  ],
+  "private": false,
+  "description": "A collection of AngularJS directives to be able to quickly scaffold prototypes for the iPad application and web applications.",
+  "keywords": [
+    "application",
+    "prototype",
+    "chemistry",
+    "platform"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angucomplete-alt": "~1.1.0",
+    "angular": "^1.4.3",
+    "chemistry-framework": "*",
+    "ionicons": "2.0.1",
+    "ui-router": "~0.2.15"
+  }
 }
