@@ -10,3 +10,4 @@ The following code sets are dependencies. Refer to their respective documentatio
 * [UI Router](https://github.com/angular-ui/ui-router)
 * [Chemistry Framework](https://github.com/ChemistryApp/chemistry-framework)
 * [Ionicons](https://github.com/driftyco/ionicons)
+* [AnguComplete-Alt](https://github.com/ghiden/angucomplete-alt)
